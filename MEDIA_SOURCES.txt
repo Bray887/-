@@ -1,0 +1,27 @@
+媒體素材來源與授權紀錄
+======================
+
+本專案實際包含的媒體
+- graph/*.svg：本課堂專案使用的向量圖像示意素材。
+- graph/department-intro.mp4：以本專案 SVG 圖像製作的短片示範，並非外部下載的真人實拍影片。
+- graph/department-intro-poster.jpg：本地影片預覽封面，由短片第一格輸出。
+
+可選用的外部照片／影片候選（使用前請重新查看該來源當下的授權條款）
+1. Pixabay 學生討論照片：
+   https://pixabay.com/photos/students-group-meeting-discussion-6078679/
+   來源頁標示 Pixabay Content License。
+2. Pixabay 學生合作影片：
+   https://pixabay.com/videos/students-university-college-159024/
+   來源頁標示 Pixabay Content License；MP4、1920x1080。
+3. Pexels 團隊合作影片：
+   https://www.pexels.com/video/young-business-people-working-together-5725721/
+   來源頁標示 Free；3840x2160、約 9 秒。請遵守 Pexels License。
+4. Pexels License：
+   https://www.pexels.com/legal-pages/license/
+
+素材使用提醒
+- 來源連結是候選素材清單，不代表來源頁的原始照片或影片已經下載進 graph/。
+- 如要將外部素材實際用於作業，請自行從來源網站下載並存入 graph/，例如 graph/campus-photo.jpg 或 graph/student-teamwork.mp4。
+- HTML 必須使用相對路徑，例如 <img src="graph/campus-photo.jpg"> 或 <video><source src="graph/student-teamwork.mp4" type="video/mp4"></video>。
+- 不建議把新聞網站圖片當成免費素材；校園照片若無明確授權，請改用校方提供且允許使用的圖片或自行拍攝。
+- 對真人照片／影片，避免暗示人物或品牌替系所背書；留意個資、肖像權及授權範圍。

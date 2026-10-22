@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="慈濟大學經營管理學系系所形象網站示範專案，介紹學習特色、課程方向、學生發展與作品成果。">
+  <meta name="theme-color" content="#123c3a">
+  <title>經營管理學系｜慈濟大學</title>
+  <style>
+    :root{--ink:#183330;--green:#174b45;--green2:#28766a;--gold:#d5aa62;--cream:#f6f4ed;--paper:#fffefa;--muted:#64736f;--line:#dce5df;--shadow:0 18px 50px rgba(18,60,58,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.8}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{font:inherit}
+    .skip{position:absolute;left:-9999px;top:0;background:white;padding:10px;z-index:100}.skip:focus{left:10px}
+    .topline{height:5px;background:linear-gradient(90deg,var(--gold),#f0d9a5,var(--green2))}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,254,250,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(220,229,223,.9)}
+    .navwrap{max-width:1180px;margin:auto;padding:0 24px;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;min-width:240px}.brandmark{width:45px;height:45px;border-radius:50% 50% 45% 45%;display:grid;place-items:center;background:var(--green);color:#f8e8bf;font-family:Georgia,serif;font-size:24px;border:2px solid #d8b36f;box-shadow:inset 0 0 0 3px var(--green)}
+    .brand strong{display:block;font-size:16px;letter-spacing:.08em;line-height:1.4}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.12em}
+    nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:650}nav a{padding:10px 0;border-bottom:2px solid transparent}nav a:hover,nav a:focus{color:var(--green2);border-color:var(--gold)}
+    .navcta{padding:10px 17px;border:1px solid var(--green);border-radius:99px;color:var(--green)}
+    .menu-toggle{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:8px 12px;color:var(--green)}
+    .hero{background:var(--cream);overflow:hidden}.hero-inner{max-width:1180px;margin:auto;padding:72px 24px 76px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:46px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--green2);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:30px;height:2px;background:var(--gold)}
+    h1{font-size:clamp(38px,5vw,64px);line-height:1.22;letter-spacing:-.04em;margin:20px 0 22px;font-weight:850}h1 em{font-style:normal;color:var(--green2)}.hero p{font-size:17px;color:#53645f;max-width:590px;margin:0 0 30px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:99px;font-weight:750;font-size:14px;transition:.2s}.btn-primary{background:var(--green);color:white;box-shadow:0 9px 20px #174b4522}.btn-primary:hover{background:var(--green2);transform:translateY(-2px)}.btn-ghost{border:1px solid #bdcbc4;color:var(--green)}.btn-ghost:hover{background:white}
+    .hero-art{position:relative}.hero-art img{width:100%;border-radius:28px;box-shadow:var(--shadow)}.hero-note{position:absolute;left:-22px;bottom:22px;background:white;border:1px solid var(--line);padding:15px 20px;border-radius:15px;box-shadow:var(--shadow);max-width:220px}.hero-note strong{display:block;color:var(--green);font-size:17px}.hero-note span{font-size:12px;color:var(--muted)}
+    .quickfacts{background:var(--green);color:white}.facts-inner{max-width:1180px;margin:auto;padding:27px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.fact{border-right:1px solid #ffffff2b;padding-left:20px}.fact:first-child{padding-left:0}.fact:last-child{border:0}.fact b{display:block;font-size:18px;letter-spacing:.03em}.fact span{font-size:12px;color:#c7d8d2}
+    section{scroll-margin-top:95px}.section{max-width:1180px;margin:auto;padding:88px 24px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:36px}.section-kicker{color:var(--green2);font-weight:800;letter-spacing:.16em;font-size:12px}.section h2{font-size:clamp(28px,3.4vw,42px);line-height:1.3;letter-spacing:-.03em;margin:8px 0 0}.section-head p{max-width:490px;color:var(--muted);margin:0;font-size:14px}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:28px;border:1px solid var(--line);border-radius:20px;background:white;transition:.2s}.feature:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#b9d0c5}.feature .num{font-size:12px;color:var(--gold);font-weight:900;letter-spacing:.15em}.feature h3{font-size:20px;margin:15px 0 10px}.feature p{font-size:14px;color:var(--muted);margin:0}.iconbox{width:47px;height:47px;border-radius:14px;background:#eaf2ed;color:var(--green);display:grid;place-items:center;font-size:23px;margin-bottom:18px}
+    .about{background:#f8faf7}.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}.about-img img{border-radius:24px;box-shadow:var(--shadow)}.about-copy p{color:var(--muted)}.checklist{list-style:none;padding:0;margin:25px 0}.checklist li{padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--line)}.checklist li:before{content:"✓";position:absolute;left:0;top:10px;color:var(--green2);font-weight:900}
+    .pathway{background:var(--cream)}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px}.step{padding:0 22px 0 0;position:relative}.step:not(:last-child):after{content:"";position:absolute;top:20px;left:53px;right:10px;height:1px;background:#c5d3ca}.step-number{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:white;font-weight:800;position:relative;z-index:1;border:4px solid #e5ece5}.step h3{font-size:17px;margin:18px 0 8px}.step p{font-size:13px;color:var(--muted);margin:0}
+    .curriculum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.course{border:1px solid var(--line);border-radius:16px;padding:23px;display:flex;gap:18px}.course-icon{flex:0 0 46px;height:46px;display:grid;place-items:center;border-radius:13px;background:#edf3ee;font-size:21px}.course h3{margin:0 0 6px;font-size:17px}.course p{margin:0;color:var(--muted);font-size:13px}.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.tag{font-size:11px;padding:4px 9px;background:#f2f5f1;border-radius:99px;color:#50665e}
+    .highlight{background:var(--green);color:white}.highlight .section-kicker{color:#e5c17e}.highlight .section-head p{color:#c9d9d3}.highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.highlight h2{font-size:clamp(30px,4vw,46px)}.highlight p{color:#d1e0da}.highlight img{border-radius:22px;border:1px solid #ffffff28}.pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.pillar{border:1px solid #ffffff32;border-radius:14px;padding:15px}.pillar b{display:block;font-size:15px}.pillar span{font-size:12px;color:#c9d9d3}
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.news{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:white}.news img{width:100%;aspect-ratio:16/9;object-fit:cover}.news-body{padding:20px}.news-meta{font-size:11px;color:var(--green2);font-weight:800;letter-spacing:.08em}.news h3{font-size:17px;line-height:1.5;margin:8px 0}.news p{font-size:13px;color:var(--muted);margin:0}
+    .cta-band{background:#eaf1eb}.cta-inner{max-width:1180px;margin:auto;padding:54px 24px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta-inner h2{margin:0 0 8px;font-size:30px}.cta-inner p{margin:0;color:var(--muted)}
+    footer{background:#102e2b;color:#dce9e3}.footer-inner{max-width:1180px;margin:auto;padding:50px 24px 24px}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:35px}.footer-brand{font-size:18px;font-weight:800;letter-spacing:.06em}.footer-top p,.footer-top li{font-size:13px;color:#b7cbc2}.footer-top ul{list-style:none;padding:0;margin:12px 0}.footer-top li{margin:7px 0}.footer-top a:hover{color:#f0d39a}.footer-bottom{border-top:1px solid #ffffff24;padding-top:18px;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#9fb8ad}.disclaimer{max-width:1180px;margin:0 auto;padding:0 24px 25px;color:#9fb8ad;font-size:11px}
+
+    .media-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}.media-player{border-radius:22px;overflow:hidden;background:#102e2b;box-shadow:var(--shadow);border:1px solid var(--line)}.media-player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#102e2b}.media-copy{padding:10px 0}.media-copy h3{font-size:22px;margin:12px 0}.media-copy p{font-size:14px;color:var(--muted)}.media-badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.media-badges span{font-size:11px;background:#edf3ee;color:#45665a;padding:5px 10px;border-radius:99px}.source-links{font-size:12px;color:var(--muted);margin-top:18px}.source-links a{text-decoration:underline;color:var(--green2)}
+    @media(max-width:680px){.media-grid{grid-template-columns:1fr}}
+
+    @media(max-width:900px){nav{gap:13px;font-size:12px}.hero-inner{gap:25px}.facts-inner{grid-template-columns:repeat(2,1fr)}.fact:nth-child(2){border:0}.feature-grid,.news-grid{grid-template-columns:1fr 1fr}.about-grid,.highlight-grid{gap:30px}.steps{grid-template-columns:repeat(2,1fr);gap:28px}.step:after{display:none}}
+    @media(max-width:680px){.navwrap{min-height:70px}.menu-toggle{display:block}nav{display:none;position:absolute;top:69px;left:0;right:0;background:var(--paper);padding:15px 24px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:5px}nav.open{display:flex}nav a{padding:10px 0}.navcta{text-align:center}.hero-inner{grid-template-columns:1fr;padding-top:48px;padding-bottom:52px}.hero-art{margin:12px 0 0 15px}.hero-note{left:-12px;bottom:12px}.section{padding:62px 20px}.section-head{display:block}.section-head p{margin-top:15px}.feature-grid,.news-grid,.curriculum-grid,.about-grid,.highlight-grid{grid-template-columns:1fr}.about-img{order:2}.facts-inner{padding:24px 20px;gap:16px}.fact{padding-left:10px}.fact b{font-size:15px}.steps{grid-template-columns:1fr 1fr}.step{padding-right:8px}.pillars{grid-template-columns:1fr 1fr}.cta-inner{display:block;padding:40px 20px}.cta-inner .btn{margin-top:20px}.footer-top{grid-template-columns:1fr;gap:20px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">跳至主要內容</a><div class="topline"></div>
+<header>
+  <div class="navwrap">
+    <a class="brand" href="index.html" aria-label="經營管理學系首頁">
+      <span class="brandmark">M</span><span><strong>經營管理學系</strong><small>DEPARTMENT OF BUSINESS ADMINISTRATION</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">選單 ☰</button>
+    <nav id="main-nav" aria-label="主要導覽">
+      <a href="#about">認識本系</a><a href="#learning">學習特色</a><a href="#curriculum">課程規劃</a><a href="#future">未來發展</a><a href="#media">影音專區</a><a href="studentworks.html">學生作品</a><a class="navcta" href="#contact">聯絡與參訪 ↗</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Think clearly · Lead responsibly</div>
+        <h1>讓管理成為<br><em>解決問題的力量。</em></h1>
+        <p>從商業思維出發，以人為本、以數據為據，培養能理解組織、整合資源、勇於實踐的跨域人才。讓每一次學習，都成為回應真實世界的起點。</p>
+        <div class="actions"><a class="btn btn-primary" href="#learning">探索學習特色 <span>↗</span></a><a class="btn btn-ghost" href="studentworks.html">瀏覽學生作品 <span>→</span></a></div>
+      </div>
+      <div class="hero-art"><img src="graph/hero-campus.svg" alt="以山巒、建築與綠色植物構成的校園意象插畫"><div class="hero-note"><strong>學以致用・共創價值</strong><span>把知識轉化為能實際行動的能力</span></div></div>
+    </div>
+  </section>
+  <div class="quickfacts"><div class="facts-inner">
+    <div class="fact"><b>管理 × 數據</b><span>培養分析與決策思維</span></div><div class="fact"><b>理論 × 實作</b><span>從案例走向專題實踐</span></div><div class="fact"><b>個人 × 團隊</b><span>溝通協作與領導能力</span></div><div class="fact"><b>在地 × 國際</b><span>理解地方並連結世界</span></div>
+  </div></div>
+
+  <section id="about" class="section about">
+    <div class="about-grid">
+      <div class="about-img"><img src="graph/collaboration.svg" alt="學生在桌邊共同討論企劃與資料的插畫"></div>
+      <div class="about-copy"><div class="section-kicker">ABOUT THE DEPARTMENT</div><h2>理解組織，<br>也理解每一個人。</h2>
+        <p>經營管理不只是學習如何管理企業，更是學習如何看見問題、理解需求、整合不同觀點，並在有限資源下做出有根據的選擇。</p>
+        <p>本網站以慈濟大學經營管理學系為主題，呈現系所形象、學習方向與學生專題成果。網站內容為課堂建置的形象展示版本，正式公開前應由系所確認課程、師資、招生及聯絡資訊。</p>
+        <ul class="checklist"><li>建立商業基礎與系統化思考能力</li><li>透過專題、案例與團隊合作練習實務解題</li><li>關注永續發展、社會責任與地方需求</li><li>培養持續學習、溝通表達與跨域合作的習慣</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning" class="section">
+    <div class="section-head"><div><div class="section-kicker">LEARNING EXPERIENCE</div><h2>把知識帶進真實情境</h2></div><p>管理能力需要在情境中練習。從提出問題、蒐集資料，到形成方案與檢視成果，讓學習不只停留在課本。</p></div>
+    <div class="feature-grid">
+      <article class="feature"><div class="iconbox">⌕</div><div class="num">01 / ANALYZE</div><h3>分析與決策</h3><p>練習定義問題、判讀資料、比較方案與說明決策理由，建立有邏輯、可追溯的分析流程。</p></article>
+      <article class="feature"><div class="iconbox">↗</div><div class="num">02 / CREATE</div><h3>創新與企劃</h3><p>從使用者需求出發，將想法轉化為企劃架構，思考市場、資源、成本、執行方式與成果衡量。</p></article>
+      <article class="feature"><div class="iconbox">◎</div><div class="num">03 / COLLABORATE</div><h3>溝通與協作</h3><p>透過分工、討論、簡報與回饋，學習整合不同專長，並在團隊中負責任地完成任務。</p></article>
+      <article class="feature"><div class="iconbox">▤</div><div class="num">04 / DATA</div><h3>數位與資料素養</h3><p>理解資料在營運、行銷與管理中的角色，培養工具應用、資訊判讀與數位溝通能力。</p></article>
+      <article class="feature"><div class="iconbox">♧</div><div class="num">05 / SUSTAINABILITY</div><h3>永續與社會責任</h3><p>思考企業決策對環境、社會與利害關係人的影響，讓經營成果與公共價值兼顧。</p></article>
+      <article class="feature"><div class="iconbox">⌂</div><div class="num">06 / LOCAL IMPACT</div><h3>在地議題實踐</h3><p>從地方產業、校園服務與社區需求觀察問題，提出符合情境、可逐步落實的改善構想。</p></article>
+    </div>
+  </section>
+
+  <section class="pathway">
+    <div class="section">
+      <div class="section-head"><div><div class="section-kicker">FROM LEARNING TO ACTION</div><h2>一個專題，完整走過四個階段</h2></div><p>以下為專題學習的示意流程，可依課程與實際專案調整。</p></div>
+      <div class="steps">
+        <div class="step"><div class="step-number">01</div><h3>觀察與定義</h3><p>辨識利害關係人，整理現況，將模糊的想法轉成清楚的問題。</p></div>
+        <div class="step"><div class="step-number">02</div><h3>研究與分析</h3><p>蒐集可靠資料、訪談或問卷，整理證據並確認需求與限制。</p></div>
+        <div class="step"><div class="step-number">03</div><h3>規劃與實作</h3><p>建立目標、時程、分工與預算，製作原型並測試可行性。</p></div>
+        <div class="step"><div class="step-number">04</div><h3>評估與分享</h3><p>依指標檢視成果，整理學習反思，向不同對象清楚呈現提案。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curriculum" class="section">
+    <div class="section-head"><div><div class="section-kicker">CURRICULUM MAP</div><h2>從基礎到整合的學習地圖</h2></div><p>下列為管理領域的課程方向示例，並非正式課程清單；實際課名、學分與開課年級請以校方最新公告為準。</p></div>
+    <div class="curriculum-grid">
+      <article class="course"><div class="course-icon">▥</div><div><h3>管理學與組織</h3><p>認識管理職能、組織運作、領導、團隊合作與組織文化。</p><div class="tagrow"><span class="tag">管理基礎</span><span class="tag">組織思維</span></div></div></article>
+      <article class="course"><div class="course-icon">◷</div><div><h3>會計與財務概念</h3><p>理解成本、預算、財務資訊與資源配置，建立經營判斷基礎。</p><div class="tagrow"><span class="tag">成本概念</span><span class="tag">資源配置</span></div></div></article>
+      <article class="course"><div class="course-icon">⌁</div><div><h3>行銷與消費者行為</h3><p>分析市場、顧客需求、品牌定位、行銷溝通與服務體驗。</p><div class="tagrow"><span class="tag">市場分析</span><span class="tag">顧客洞察</span></div></div></article>
+      <article class="course"><div class="course-icon">▦</div><div><h3>統計與商業分析</h3><p>透過資料整理、基本統計與圖表表達，支持問題分析與決策。</p><div class="tagrow"><span class="tag">資料素養</span><span class="tag">決策支持</span></div></div></article>
+      <article class="course"><div class="course-icon">♧</div><div><h3>人力資源與人才發展</h3><p>理解人才招募、培訓、績效回饋、職涯發展與工作關係。</p><div class="tagrow"><span class="tag">人才發展</span><span class="tag">溝通協作</span></div></div></article>
+      <article class="course"><div class="course-icon">↗</div><div><h3>創業與專案管理</h3><p>將需求轉化為可執行方案，練習時程、風險、成本與成果管理。</p><div class="tagrow"><span class="tag">企劃實作</span><span class="tag">專案規劃</span></div></div></article>
+    </div>
+  </section>
+
+  <section id="future" class="highlight">
+    <div class="section">
+      <div class="highlight-grid">
+        <div><div class="section-kicker">FUTURE PATHWAYS</div><h2>能力可以跨越產業，<br>價值來自持續實踐。</h2><p>經營管理的知識可應用於企業、非營利組織、公共服務、地方創生與新創團隊。真正的職涯方向，仍需依個人興趣、專長、實習經驗與持續進修逐步探索。</p>
+          <div class="pillars"><div class="pillar"><b>企業營運與行政</b><span>流程協調、營運支援、專案執行</span></div><div class="pillar"><b>行銷與品牌企劃</b><span>市場研究、內容企劃、顧客經營</span></div><div class="pillar"><b>人力資源與人才發展</b><span>招募協助、教育訓練、組織溝通</span></div><div class="pillar"><b>創業與社會創新</b><span>商業模式、服務設計、地方實踐</span></div></div>
+        </div>
+        <div><img src="graph/future-path.svg" alt="以階梯、路徑與遠方山巒象徵學習與職涯發展的插畫"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><div class="section-kicker">STUDENT LIFE & PROJECTS</div><h2>讓成果被看見，讓經驗能累積</h2></div><p>學生作品頁將逐步收錄課程專題、企劃提案、研究成果、活動紀錄與影音作品。所有內容應經作者同意並標註必要資訊。</p></div>
+    <div class="news-grid">
+      <article class="news"><img src="graph/project-research.svg" alt="研究與資料分析主題插畫"><div class="news-body"><div class="news-meta">PROJECT / 01</div><h3>研究與資料分析</h3><p>從問卷、訪談與公開資料中整理觀察，將證據轉化為清楚的發現與建議。</p></div></article>
+      <article class="news"><img src="graph/project-brand.svg" alt="品牌企劃與設計主題插畫"><div class="news-body"><div class="news-meta">PROJECT / 02</div><h3>品牌與行銷企劃</h3><p>理解目標受眾，發展品牌定位、溝通內容與行銷活動的執行架構。</p></div></article>
+      <article class="news"><img src="graph/project-community.svg" alt="社區合作與永續行動主題插畫"><div class="news-body"><div class="news-meta">PROJECT / 03</div><h3>永續與地方實踐</h3><p>以服務設計與跨域協作回應真實需求，探索兼顧可行性與公共價值的方案。</p></div></article>
+    </div>
+    <div style="text-align:center;margin-top:30px"><a class="btn btn-primary" href="studentworks.html">前往學生作品展示頁 →</a></div>
+  </section>
+
+
+  <section id="media" class="section">
+    <div class="section-head"><div><div class="section-kicker">MEDIA & STORYTELLING</div><h2>用影像記錄學習歷程</h2></div><p>短片示範本系網站如何呈現學習理念與作品精神。後續可替換成學生實際拍攝的校園、課程、專題訪談及成果發表影片。</p></div>
+    <div class="media-grid">
+      <div class="media-player"><video controls preload="metadata" poster="graph/department-intro-poster.jpg" aria-label="經營管理學系學習理念示範短片"><source src="graph/department-intro.mp4" type="video/mp4">您的瀏覽器不支援 HTML5 影片，請改用支援 MP4 的瀏覽器。</video></div>
+      <div class="media-copy"><div class="section-kicker">DEPARTMENT INTRODUCTION</div><h3>經營管理學習導覽｜示範短片</h3><p>本段約 13 秒，使用專案內製作的圖像搭配繁體中文標題製作，影片檔案已存放於 graph 資料夾，符合相對路徑讀取方式。</p><div class="media-badges"><span>MP4 / H.264</span><span>本地素材</span><span>可替換為實拍影片</span></div><p class="source-links">實拍素材推薦：<a href="https://pixabay.com/photos/students-group-meeting-discussion-6078679/" target="_blank" rel="noopener">Pixabay 學生討論照片</a> · <a href="https://pixabay.com/videos/students-university-college-159024/" target="_blank" rel="noopener">Pixabay 學生合作影片</a> · <a href="https://www.pexels.com/video/young-business-people-working-together-5725721/" target="_blank" rel="noopener">Pexels 團隊合作影片</a></p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta-band"><div class="cta-inner"><div><h2>對經營管理的學習感到好奇嗎？</h2><p>歡迎從課程方向與學生作品開始認識本系。</p></div><a class="btn btn-primary" href="studentworks.html">查看學生作品 <span>↗</span></a></div></section>
+</main>
+<footer>
+  <div class="footer-inner"><div class="footer-top">
+    <div><div class="footer-brand">慈濟大學｜經營管理學系</div><p>以管理知識理解組織，以實踐能力回應問題。<br>本網站為課堂網頁設計專案之示範網站。</p></div>
+    <div><strong>快速導覽</strong><ul><li><a href="#about">認識本系</a></li><li><a href="#learning">學習特色</a></li><li><a href="#curriculum">課程規劃</a></li><li><a href="#future">未來發展</a></li></ul></div>
+    <div><strong>作品與維護</strong><ul><li><a href="studentworks.html">學生作品展示</a></li><li><a href="README.txt">專案說明</a></li><li><a href="MEDIA_SOURCES.txt">媒體素材與授權紀錄</a></li><li><a href="#contact">聯絡與參訪</a></li></ul></div>
+  </div><div class="footer-bottom"><span>© 2026 Department of Business Administration — Student Web Design Project</span><span>以清楚資訊、友善導覽與響應式設計為原則</span></div></div>
+  <div class="disclaimer">注意：本頁為課堂示範內容，非校方正式公告。課程、師資、招生、聯絡方式及校徽等資訊請於正式發布前查證並取得授權；目前未填入未經確認的官方電話、地址或師資姓名。</div>
+</footer>
+<script>
+  const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('#main-nav');
+  toggle.addEventListener('click',()=>{const opened=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(opened));});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+</script>
+</body>
+</html>
